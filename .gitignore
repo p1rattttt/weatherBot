@@ -1,1 +1,3 @@
-/venv/
+bot/venv/
+bot/__pycache__/
+vot/.idea/
