@@ -44,7 +44,7 @@ class Bot:
     @staticmethod
     def get_the_forecast(chat_id, text):
         try:
-            # print(text)
+            print(text)
             geolocator = Nominatim(user_agent='bot')
             location = geolocator.geocode(text)
             lat = location.latitude
@@ -62,6 +62,5 @@ class Bot:
             markup.add(types.KeyboardButton('Узнать погоду'))
             Bot.bot.send_message(chat_id, 'Текущая температура воздуха: {} °C, '
                                           'ощущается как {} °C, скорость ветра - {} м/с'.format(str(temp), str(feels_like), str(wind_speed)), Bot.bot.get_me(), reply_markup=markup)
-
-        except ...:
+        except:
             Bot.bot.send_message(chat_id, 'Неправильный город, попробуйте ещё раз')

@@ -36,6 +36,5 @@ class SQL:
     def getcity(self, id):
         with self.conn:
             # self.cur = self.conn.cursor()
-            user = self.cur.execute("SELECT * FROM 'users' ")
-            for i in user:
-                return i[1]
+            user = self.cur.execute('''SELECT * FROM users WHERE id = ?''', (id,)).fetchall()
+            return user[0][1]
